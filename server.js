@@ -13,10 +13,10 @@ app.use('/', require('./routes/index'));
 app.use('/api/url', require('./routes/url'));
 
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('/ittybittyurl/build'));
+    app.use(express.static('/client/build'));
     app.get('*', (req, res) => {  
 
-        res.sendFile(path.resolve(__dirname, 'ittybittyurl', 'build', 'index.html'));
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 
     });
     console.log('Serving React');
